@@ -32,10 +32,11 @@ certificates_file_load="#__next > div > main > section > div > div > div.col-12.
 certificate_delete_icon="#__next > div > main > section > div > div > div.col-12.col-lg-9 > div > div:nth-child(2) > div > div.table-responsive-sm > table > tbody > tr > td:nth-child(4) > span.trashIcon"
 certificates_download_icon="#__next > div > main > section > div > div > div.col-12.col-lg-9 > div > div:nth-child(2) > div > div.table-responsive-sm > table > tbody > tr > td:nth-child(4) > span.fileIcon"
 yes_button_certificate ="body > div.fade.alert-modal.modal.show > div > div > div > div > div > div.alert-buttons > button.btn.btn-yes.my-3"
-certificate_choose_button= "/html/body/div[3]/div/div"
+certificate_choose_button= "/html/body/div[4]/div/div"
 alert_certificate_deleted="div[role='alert'] > .toast-body"
 profile_file_input= "//*[@id='__next']/div/main/section/div/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div[2]"
 file_load_button= "#__next > div > main > section > div > div > div.col-12.col-lg-9 > div > div:nth-child(2) > div > div.col-12.tobeto-light-bg > div > div:nth-child(3) > div > div > div > div.uppy-Dashboard-inner > div > div.uppy-Dashboard-progressindicators > div.uppy-StatusBar.is-waiting > div.uppy-StatusBar-actions > button"
 
-
+ 
 certificates_download_icon_css= ".fileIcon" 
+yesButton ="body > div.fade.alert-modal.modal.show > div > div > div > div > div > div.alert-buttons > button.btn.btn-yes.my-3"
