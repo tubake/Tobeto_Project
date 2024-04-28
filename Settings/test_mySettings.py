@@ -1,5 +1,5 @@
 from selenium import webdriver
-from userInfo import *
+# from userInfo import *
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -10,7 +10,7 @@ from constants.setttingsConstants import *
 from time import sleep
 import pytest
 
-class Test_My_Competentences():
+class Test_Settings():
     def setup_method(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
@@ -33,6 +33,11 @@ class Test_My_Competentences():
         loginButton.click()
         alert_quit = self.waitForElementVisible((By.XPATH, alert_login_text))
         alert_quit.click()
+        myProfilePage = self.waitForElementVisible((By.XPATH, my_profile_page))
+        myProfilePage.click()
+        myProfileEdit = self.waitForElementVisible((By.CSS_SELECTOR, my_profile_edit))
+        myProfileEdit.click()
+        sleep(2)
 
     #Settings = Ayarlar
     #Ayarlar sayfasını görüntüle
@@ -44,7 +49,7 @@ class Test_My_Competentences():
         settingsButton = self.waitForElementVisible((By.XPATH, settings_button_xpath))
         settingsButton.click()
         current_url= self.driver.current_url
-        excepted_url = "https://tobeto.com/profilim/profilimi-duzenle/sertifikalarim"
+        excepted_url = "https://tobeto.com/profilim/profilimi-duzenle/ayarlar"
         assert current_url == excepted_url
        
 
@@ -81,7 +86,7 @@ class Test_My_Competentences():
         changePasswordButton = self.waitForElementVisible((By.XPATH,change_password_button))
         changePasswordButton.click()
         alertOldWrongPassword =self.waitForElementVisible((By.XPATH,alert_old_wrong_password))
-        assert alertOldWrongPassword.text == "Mevcut şifre geçersizdir."
+        assert alertOldWrongPassword.text == "• Mevcut şifre geçersizdir."
 
     #Belirlenen şifre 6 karakterden az ise uyarıyı görüntüle
     def test_settings_shortPassword(self):
@@ -98,7 +103,7 @@ class Test_My_Competentences():
         changePasswordButton = self.waitForElementVisible((By.XPATH,change_password_button))    
         changePasswordButton.click()
         alertShortPassword =self.waitForElementVisible((By.XPATH,alert_short_password))
-        assert alertShortPassword.text == "Şifreniz en az 6 karakterden oluşmalıdır."
+        assert alertShortPassword.text == "• Şifreniz en az 6 karakterden oluşmalıdır."
      
 
     

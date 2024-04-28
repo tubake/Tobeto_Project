@@ -2,6 +2,8 @@ BASE_URL = "https://tobeto.com/"
 LOGIN_URL= "https://tobeto.com/giris"
 PLATFORM_URL= "https://tobeto.com/platform"
 
+email_tuba= "mihraa777@gmail.com"
+password_tuba="123456"
 
 #Login
 login_input_button = "/html/body/div[1]/div/section[1]/nav/div/div/a[1]"

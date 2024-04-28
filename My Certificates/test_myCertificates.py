@@ -1,17 +1,17 @@
 from selenium import webdriver
-from userInfo import *
+# from userInfo import *
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-# from constants.globalConstants import *
+
 from constants.myCertificatesConstants import *
 # from PIL import Image
 from time import sleep
 import pytest
 
-class Test_My_Competentences():
+class Test_My_Certificates():
     def setup_method(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
@@ -34,17 +34,17 @@ class Test_My_Competentences():
         loginButton.click()
         alert_quit = self.waitForElementVisible((By.XPATH, alert_login_text))
         alert_quit.click()
-
-    #Sertifikalarım görüntüle
-    def test_myCertificates(self):
-        self.valid_login()
         myProfilePage = self.waitForElementVisible((By.XPATH, my_profile_page))
         myProfilePage.click()
         myProfileEdit = self.waitForElementVisible((By.CSS_SELECTOR, my_profile_edit))
         myProfileEdit.click()
+
+    #Sertifikalarım görüntüle
+    def test_myCertificates(self):
+        self.valid_login()
         sleep(2)
-        myCompetencesButton = self.waitForElementVisible((By.XPATH, my_certificates_xpath))
-        myCompetencesButton.click()
+        myCertificatesPage= self.waitForElementVisible((By.XPATH, my_certificates_xpath))
+        myCertificatesPage.click()
         current_url= self.driver.current_url
         excepted_url = "https://tobeto.com/profilim/profilimi-duzenle/sertifikalarim"
         assert current_url == excepted_url
@@ -54,10 +54,6 @@ class Test_My_Competentences():
     #Sertifikalarım ,belge yükleme
     def test_myCertificatesFileLoad(self):
         self.valid_login()
-        myProfilePage = self.waitForElementVisible((By.XPATH, my_profile_page))
-        myProfilePage.click()
-        myProfileEdit =  self.waitForElementVisible((By.CSS_SELECTOR, my_profile_edit))
-        myProfileEdit.click()
         myCertificatesPage= self.waitForElementVisible((By.XPATH, my_certificates_xpath))
         myCertificatesPage.click()
         sleep(2)
@@ -77,13 +73,15 @@ class Test_My_Competentences():
         sleep()
 
 
+
+
+
+
+
+
     #Sertifikalarım ,yüklü olan sertifikayı indirme
     def test_myCertificatesDownload(self):
         self.valid_login()
-        myProfilePage = self.waitForElementVisible((By.XPATH, my_profile_page))
-        myProfilePage.click()
-        myProfileEdit =  self.waitForElementVisible((By.CSS_SELECTOR, my_profile_edit))
-        myProfileEdit.click()
         myCertificatesPage= self.waitForElementVisible((By.XPATH, my_certificates_xpath))
         myCertificatesPage.click()
         sleep(2)
@@ -97,10 +95,6 @@ class Test_My_Competentences():
     #Sertifika Silme
     def test_myCertificatesDelete(self):
         self.valid_login()
-        myProfilePage = self.waitForElementVisible((By.XPATH, my_profile_page))
-        myProfilePage.click()
-        myProfileEdit = self.waitForElementVisible((By.CSS_SELECTOR, my_profile_edit))
-        myProfileEdit.click()
         myCertificatesPage= self.waitForElementVisible((By.XPATH, my_certificates_xpath))
         myCertificatesPage.click()
         sleep(2)

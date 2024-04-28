@@ -1,11 +1,11 @@
 from selenium import webdriver
-from userInfo import *
+# from userInfo import *
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-from constants.globalConstants import *
+
 from constants.myCompetencesConstants import *
 # from PIL import Image
 from time import sleep
